@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/JsFolder/JavaScript.js"></script>
+    <link rel="stylesheet" href="/Layout/navigationBar.css" />
+    <link rel="stylesheet" href="/Layout/style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CartPage</title>
+
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="Index.html" id="navbar_logo">HEDIO</a>
+            <ul class="navbar_menu">
+                <li class="navbar_item"><a class="navbar_links" href="Index.html">Main Page</a></li>
+                <li class="navbar_item"><a href="_Hakkımızda.html" class="navbar_links">About Us</a></li>
+                <li class="navbar_item"><a href="Products.html" class="navbar_links">Products</a></li>
+                <li class="navbar_item"><a href="cart.html" class="navbar_links">Your Cart</a></li>
+                <li class="navbar_btn"><a href="SignUpPage.cshtml" class="button">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="cartpage">
+        <h1>Your Shopping List:</h1>
+
+        <ul id="cartItemsList"></ul>
+        <button type="button" class="cartbutton" onclick="calculateTotalPrice()"><h7>BUY!</h7></button>
+        <p id="totalPriceDisplay"></p>
+        <button type="button" class="flushCartButton" onclick="flushCart()"><h7>Flush The Cart Away</h7></button>
+
+
+
+
+        <script>
+            var storedCartItems = localStorage.getItem('cartItems');
+            var parsedCartItems = JSON.parse(storedCartItems) || [];
+            var cartItemsContainer = document.getElementById('cartItemsList');
+
+            parsedCartItems.forEach(function (cartItem) {
+                var itemElement = document.createElement('li');
+                itemElement.innerHTML = `
+                                                    <h2>${cartItem.name}</h2>
+                                                    <p>${cartItem.price}</p>
+                                                    <p>${cartItem.description}</p>
+                                                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
+
+            function calculateTotalPrice() {
+                var totalPrice = 0;
+                parsedCartItems.forEach(function (cartItem) {
+                    var priceWithoutDollar = cartItem.price.replace('$', '');
+                    totalPrice += parseFloat(priceWithoutDollar);
+                });
+
+                var totalPriceDisplay = document.getElementById('totalPriceDisplay');
+                totalPriceDisplay.textContent = 'Total Price: $' + totalPrice.toFixed(2) + '!';
+            }
+
+            function flushCart() {
+                // Clear cart items and update display
+                parsedCartItems = [];
+                localStorage.setItem('cartItems', JSON.stringify(parsedCartItems));
+                cartItemsContainer.innerHTML = '';
+                document.getElementById('totalPriceDisplay').textContent = 'Total Price: $0.00';
+            }
+        </script>
+
+
+
+
+
+
+
+    </div>
+    <div class="spacer"></div>
+    <footer>
+        <p>Contact Us: HedioInc@headio.com</p> <p>Our Website: HedioInc.com</p>
+        <div class="img-container"><img src="/Pics/mail.png" alt="pic" /></div>
+    </footer>
+</body>
+</html>

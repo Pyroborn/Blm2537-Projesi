@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/JsFolder/JavaScript.js"></script>
+    <link rel="stylesheet" href="/Layout/navigationBar.css" />
+    <link rel="stylesheet" href="/Layout/style.css" />
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="Index.html" id="navbar_logo">HEDIO</a>
+            <ul class="navbar_menu">
+                <li class="navbar_item"><a class="navbar_links" href="Index.html">Main Page</a></li>
+                <li class="navbar_item"><a href="_Hakkımızda.html" class="navbar_links">About Us</a></li>
+                <li class="navbar_item"><a href="Products.html" class="navbar_links">Products</a></li>
+                <li class="navbar_item"><a href="cart.html" class="navbar_links">Your Cart</a></li>
+                <li class="navbar_btn"><a href="SignUpPage.cshtml" class="button">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="productpage">
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Pics/jbl_black.png" class="card-img-top" alt="pic1"> <!--tam burda 4d 4te resimlerle Model.id bağlı o işi halledince buraya-->
+            <div class="card-body">
+                <h5 class="card-title">Jbl Black Wireless Headset</h5>
+                <button type="button" id="openBtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal" data-productId="0"><h7>Add</h7></button>
+                <!--<button type="button" id="addToCartButton" data-productId="0" class="btn btn-primary"><h7>Add To Cart</h7></button>-->
+
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Pics/sony blue ch700n.png" class="card-img-top" alt="pic2"> <!-- Model images go here -->
+            <div class="card-body">
+                <h5 class="card-title">Sony Blue ch700</h5>
+                <button type="button" id="openBtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal" data-productId="1"><h7>Add</h7></button>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Pics/rockerz_551.png" class="card-img-top" alt="pic3"> <!-- Model images go here -->
+            <div class="card-body">
+                <h5 class="card-title">Rockerz 551</h5>
+                    <button type="button" id="openBtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal" data-productId="2"><h7>Add</h7></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="productpage">
+
+        <div class="card" style="width: 18rem;">
+            <img src="/Pics/Headphone-4-696x1024.png" class="card-img-top" alt="pic1"> <!--tam burda 4d 4te resimlerle Model.id bağlı o işi halledince buraya-->
+            <div class="card-body">
+                <h5 class="card-title">Beats Black Casual</h5>
+                <button type="button" id="openBtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal" data-productId="3"><h7>Add</h7></button>
+            </div>
+        </div>
+
+        <div class="productpage">
+
+            <div class="card" style="width: 18rem;">
+                <img src="/Pics/landscape-front.png" class="card-img-top" alt="pic1"> <!--tam burda 4d 4te resimlerle Model.id bağlı o işi halledince buraya-->
+                <div class="card-body">
+                    <h5 class="card-title">Sprout Invoke Bluetooth Headphones</h5>
+                    <button type="button" id="openBtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal" data-productId="4"><h7>Add</h7></button>
+                </div>
+            </div>
+
+            <div class="productpage">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="/Pics/cq5dam.web.1280.1280.png" class="card-img-top" alt="pic1"> <!--tam burda 4d 4te resimlerle Model.id bağlı o işi halledince buraya-->
+                    <div class="card-body">
+                        <h5 class="card-title">QuietComfort 35 II Headphones</h5>
+                        <button type="button" id="openBtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal" data-productId="5"><h7>Add</h7></button>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content" id="modalProduct0">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Product details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="modalContent">
+                            <!--modal content here-->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal"><h7>Close</h7></button>
+                            <button type="button" id="addToCartButton" class="btn btn-primary"><h7>Add To Cart</h7></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+            <div class="spacer"></div>
+            <footer>
+                <p>Contact Us: HedioInc@headio.com</p> <p>Our Website: HedioInc.com</p>
+                <div class="img-container"><img src="/Pics/mail.png" alt="pic" /></div>
+            </footer>
+</body>
+</html>
